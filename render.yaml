@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: shopkart-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node index.js
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_URL
+        value: https://manideep-2007-ok.github.io
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
